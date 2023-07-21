@@ -1,0 +1,51 @@
+<%- include('header') %>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <% if (message){%>
+<div class="alert alert-dismissible fade show alert-<%= message.type %>"role="alert">
+<button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+<strong><%= message.message %></strong>
+</div>
+<% } %>
+            
+   <div class="table-responsive">
+    <% if (user != '') { %>
+        <table class="table table-striped text-center">
+
+    <% } else { %>
+        <h3 class="text-center text-secondary mt-5">No Users Found In the Database</h1>
+        <% }  %>
+
+
+
+        <thead>
+            <tr class="table-dark">
+          
+            </tr>
+        </thead>
+        <tbody>
+   <% user.forEach((row,index)=>{ %> 
+
+    <tr>
+        <td><h1><%= index + 1 %></h1>
+        <td><img src="<%= row.image %>" width="90" class="img-thumbnail"></td>
+        <td><h3><%= row.name %></h3></td>
+        <td><h3><%= row.email %></h3></td>
+        <td><h3><%= row.phone %></h3></td>
+        <td>
+            <a href="/update-user/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+            <a href="/delete-user/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+        </td>
+    </tr>
+      <%  }) %>
+     
+        </tbody>
+    </table>
+   </div>
+        </div>
+    </div>
+</div>
+<%- include('footer') %>
+

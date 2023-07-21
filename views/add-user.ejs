@@ -1,0 +1,43 @@
+<%- include('header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card-shadow">
+                <div class="card-header bg-dark">
+                    <h3 class="text-light">Add New User</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add-user" method="post" id="add-from" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" name="Name" class="form-control form-control-lg"
+                        placeholder="Enter Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email">Email</label>
+                        <input type="text" name="Email" class="form-control form-control-lg"
+                        placeholder="Enter E-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Phone">Phone</label>
+                        <input type="text" name="Phone" class="form-control form-control-lg"
+                        placeholder="Enter Mobile" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image">Select image</label>
+                        <input class="form-control form-control-lg" type="file" name="image"
+                       
+                       
+                        >
+                    </div>
+                    <div class="mb-3 d-grid">
+                        <input type="submit" name="submit" value="Add User" class="btn btn-dark btn-lg">
+                    </div>
+                </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
